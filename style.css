@@ -1,0 +1,223 @@
+html {
+    font-size: 62.5%;
+}
+body {
+    font-family: 'Abril Fatface', cursive;
+    margin: 0 60px;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*Section hero*/
+.hero {
+    display: grid;
+    grid-template-columns: minmax(300px, 2fr) 3fr;
+    grid-auto-rows: 500px;
+    border-bottom: 2px solid gainsboro;
+    padding-bottom: 60px;
+}
+.hero__div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.hero__h1 {
+    font-size: 4.2rem;
+    font-weight: 500;
+    color: #121212;
+    margin-bottom: 0px;
+    line-height: 40px;
+}
+.hero__p {
+    color: #9f9f9f;
+    font-size: 1.7rem;
+    font-weight: 500;
+    margin-bottom: 32px;
+}
+.hero__button {
+    width: 200px;
+    height: 50px;
+    font-size: 22px;
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(to bottom, rgba(249,197,134,1) 0%, rgba(243,150,89,1) 100%);
+    border-radius: 12px;
+    border: 0px;
+    cursor: pointer;
+}
+.hero__button:hover {
+    background: linear-gradient(to bottom, rgba(245,165,66,1) 0%, rgba(238,115,32,1) 100%);
+}
+.hero__nets {
+    display: flex;
+    position: relative;
+    gap: 20px;
+    top: 50px;
+}
+.hero__nets img,
+.footer__nets img {
+    width: 20px;
+    cursor: pointer;
+}
+.hero__nets img:nth-child(3),
+.footer__nets img:nth-child(3) {
+    width: 28px;
+}
+.hero__nets img:hover,
+.footer__nets img:hover {
+    filter: drop-shadow(0px 0px 10px grey);
+}
+
+.hero__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/*Dishes section*/
+.dishes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+    padding-bottom: 60px;
+    border-bottom: 2px solid gainsboro;
+}
+.dishes__h2,
+.menu__h2 {
+    font-size: 2.4rem;
+    margin-top: 0px;
+    padding-bottom: 20px;
+    color: #121212;
+    text-align: center;
+}
+
+.dishes div {
+    display: grid;
+    max-width: 1000px;
+    gap: 40px;
+    grid-template-columns: repeat(4, minmax(50px, 400px));
+    grid-auto-rows:  1fr;
+}
+.dishes img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.dishes img:nth-child(5) {
+    grid-area: 1 / 1 / 3 / 3;
+}
+
+
+/*Menu section*/
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+    padding-bottom: 60px;
+    border-bottom: 2px solid gainsboro;
+}
+.menu div {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(100px, 160px));
+    grid-auto-rows: 1fr;
+    gap: 20px;
+}
+
+.menu img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    place-self: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.menu img:hover {
+    filter: drop-shadow(0px 0px 10px grey);
+}
+
+/*footer*/
+.footer__nets {
+    display: none;
+}
+
+@media (max-width: 425px) {
+    .dishes div {
+        gap: 20px;
+        grid-template-rows: repeat(6, 100px);
+        grid-auto-columns:  1fr;
+    }
+    .dishes img:nth-child(5) {
+        grid-area: 1 / 1 / 3 / 5;
+    }
+    .dishes img:nth-child(1) {
+        grid-area: 3 / 1 / 5 / 3;
+    }
+    .dishes img:nth-child(2) {
+        grid-area: 3 / 3 / 5 / 5;
+    }
+    .dishes img:nth-child(3) {
+        grid-area: 5 / 3 / 7 / 5;
+    }
+    .dishes img:nth-child(4) {
+        grid-area: 5 / 1 / 7 / 3;
+    }
+    .hero__button {
+        width: 150px;
+        height: 40px;
+        font-size: 18px;
+        font-weight: 700;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .hero {
+        grid-template-columns: minmax(300px, 500px);
+        justify-content: center;
+        align-content: center;
+        max-height: 420px;
+        padding-bottom: 0px;
+    }
+    .hero__img {
+        display: none;
+    }
+    .hero__nets {
+        display: none;
+    }
+    .footer__nets {
+        padding: 30px 0;
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+    }
+}
+
+@media (max-width: 800px) {
+    .menu div {
+        grid-template-columns: repeat(3, minmax(75px, 160px));
+        grid-template-rows: auto;
+    }
+    body {
+        margin: 0 30px;
+    }
+    .dishes div {
+        gap: 20px;
+    }
+}
+
+@media screen and (min-width: 1365px) {
+    .hero__nets {
+        top: 90px;
+    }
+}
